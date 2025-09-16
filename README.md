@@ -13,6 +13,6 @@ Fue desarrollado con el unico proposito de prueba técnica para demostrar el uso
 - [Chromium] Navegador headless para la automatización.
 
 
-## puesta en marcha
+## Puesta en marcha
 ```bash
     docker compose up --build
