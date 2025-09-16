@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  speech-automation:
+    build: .
+    container_name: Westcon_flask_service
+    ports:
+      - "5001:5001"
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
