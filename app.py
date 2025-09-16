@@ -91,7 +91,7 @@ def generate_speech_combined():
         )
         titulo.clear()
         titulo.send_keys("Read aloud in a warm, friendly, and exciting tone:")
-        combined = AudioSegment.silent(duration=500)
+        combined = AudioSegment.silent(duration=1)
         
         for i, texto in enumerate(textos, start=1):
             print(f"el texto {i}/{len(textos)} se procesando")
@@ -101,7 +101,7 @@ def generate_speech_combined():
                 with open(temp_file_path, "wb") as f:
                     f.write(audio_bytes)
                 audio_segment = AudioSegment.from_wav(temp_file_path)
-                combined += audio_segment + AudioSegment.silent(duration=500)
+                combined += audio_segment + AudioSegment.silent(duration=1)
 
         combined.export(combined_audio_path, format="wav")
         return send_file(combined_audio_path, mimetype="audio/wav", as_attachment=True, download_name="combined_audio.wav")
